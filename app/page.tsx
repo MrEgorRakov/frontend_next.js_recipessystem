@@ -1,14 +1,66 @@
+import Image from 'next/image'
+import { Bungee_Tint } from "next/font/google";
+import Link from 'next/link';
+
+const bungee = Bungee_Tint({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function MyApp() {
-  return (
-    <div className="min-h-screen bg-white">
-      <div className="relative w-[400px] h-[200px] bg-green-700 top-[50px] left-1/2 transform -translate-x-1/2">
-        <h1 className="absolute text-[20px] border-2 border-black p-[5px] text-black bg-blue-200 left-[40%] top-[-15%]">Banner</h1>
-        <button className="absolute top-0 right-0 px-[4px]">x</button>
-        <div className="absolute bg-white top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] rounded-full"></div>
-        <div className="absolute bg-white top-full left-full transform -translate-x-1/2 -translate-y-1/2 w-[130px] h-[90px] rounded-[45%] "></div>
-        <span className="absolute text-white border-2 border-dotted border-white text-lg p-[10px] transform -translate-x-1/2 left-[50%] top-[35%]">This is css position</span>
+  return (<div>
+          <Link 
+        className='text-blue-800 block border-2 border-black p-2 m-2 w-fit mb-8'
+        href="/products" 
+        >
+          Go to Product Page
+      </Link>
+
+      <Link 
+        className='text-red-800 block border-2 border-black p-2 m-2 w-fit mb-8'
+        href="/foo" 
+        >
+          foo button
+      </Link>
+
+      <Link 
+        className='text-red-800 block border-2 border-black p-2 m-2 w-fit mb-8'
+        href="/foo/bar" 
+        >
+          bar button
+      </Link>
+
+    <h1 className={`${bungee.className} "font-bold m-2 p-2"`}>Hello world!!</h1>
+
+    <div className="w-[80%] border rounded p-4 m-auto bg-slate-100 
+     grid 
+    grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
+      <Image
+        className='p-2 m-4'
+        src="https://computing.psu.ac.th/th/wp-content/uploads/2023/09/PSU-CoC-ENG_01_x49.png"
+        width={150}
+        height={150}
+        alt="PSU Logo"
+      />
+
+      <Image
+        className="p-2 m-4"
+        src="/next.svg"
+        width={150}
+        height={150}
+        alt="Next.js Logo"
+      />
+
+      <div className="w-64 p-2 border mb-2 rounded bg-blue-200 hover:bg-blue-700 hover:text-blue-50">
+        Lorem idivsum, dolor sit amet consectetur adidivisicing elit. Doloribus, consequuntur.
+      </div>
+      <div className="w-64 p-2 border mb-2 rounded bg-blue-600 text-white">
+        Lorem idivsum, dolor sit amet consectetur adidivisicing elit. Doloribus, consequuntur.
+      </div>
+      <div className="w-64 p-2 border rounded bg-amber-300">
+        Lorem idivsum, dolor sit amet consectetur adipisicing elit. Doloribus, consequuntur.
       </div>
     </div>
-  );
-};
+
+  </div>)
+}
