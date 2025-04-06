@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Footer from "../components/Footer";
+import ProductItem from "../components/ProductItem";
 export default function Products() {
 
     const products = [
@@ -30,30 +31,23 @@ export default function Products() {
     ];
     return (<div>
         <h1 className="font-bold text-2xl text-center my-4">Product</h1>
-        <div className="flex flex-wrap m-auto justify-center w-[80%] border rounded m-4 p-4 bg-slate-100 mb-6">
+        <div className="flex flex-wrap m-auto justify-center w-[80%] border rounded p-4 bg-slate-100 mb-6">
             {
                 products.map((product, index) => {
                     return (
-                        <div key={index} 
-                        className="relative shadow-lg rounded-md border w-fit bg-green-100 p-2 m-2">
-                            <h2 className="font-bold shadow-2xl">{product.name}</h2>
-                            <p>{product.description}</p>
-                            <Image
-                                className="p-2 m-4 rounded-full m-auto border-4 border-blue-700"
-                                src={product.image_url}
-                                width={150}
-                                height={150}
-                                alt={product.name}
-                            />
-                            <button className="border bg-pink-200 px-2 py-1 mt-2 rounded hover:font-bold">Buy Now</button>
-                            <span className="absolute bottom-2 right-2 border-2  border-blue shadow px-2 rounded-full bg-amber-400">{index + 1}</span>
-                        </div>)
+                        <ProductItem
+                            key={index}
+                            index={index}
+                            productName={product.name}
+                            description={product.description}
+                            image_url={product.image_url}
+                        />
+                    )
                 })
             }
-
-
         </div>
-        <footer className="bg-blue-200 p-2 text-center font-bold text-xl"> ..:: Product footer ::.. </footer>
+
+        <Footer />
     </div>
     )
 }
