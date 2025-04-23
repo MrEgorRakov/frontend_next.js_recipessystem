@@ -17,7 +17,7 @@ export default function Register() {
 
     if (state.message) {
         console.log("Register successfully");
-        redirect('/customer');
+        redirect('/user');
     }
 
     return (

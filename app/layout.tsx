@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import Link from "next/link";
 
 
 
@@ -19,7 +20,8 @@ export default function RootLayout({
       <body>
         <header className="flex justify-end items-center font-bold text-xl gap-4 p-4 bg-red-200 text-black">
           <div className="text-sm">
-            welcome
+          <Link href="/login">Login</Link> |
+          <Link href="/register">Register</Link>
           </div>
         </header>
         <main className="min-h-[80vh] bg-blue-50 text-black">
