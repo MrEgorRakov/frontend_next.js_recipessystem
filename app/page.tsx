@@ -1,7 +1,9 @@
 
 export default function MyApp() {
   return (
-    <div>nothing here yet</div>
+    <div className="">Welcome to our recipe finding system</div>
+
+    
   )
 
 }
